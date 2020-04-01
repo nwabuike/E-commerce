@@ -1,5 +1,5 @@
-<!--footer area start-->
-<footer class="footer_widgets color_three">
+ <!--footer area start-->
+ <footer class="footer_widgets color_three">
     <div class="footer_top">
         <div class="container">
             <div class="row">

@@ -49,7 +49,7 @@
     <!--slider area end-->
     
     <!--home section bg area start-->
-    {{-- <div class="home_section_bg section_bg_four">
+    <div class="home_section_bg section_bg_four">
        <!--Categories product area start-->
         <div class="categories_product_area categories_product_four mb-80">
             <div class="container">
@@ -61,18 +61,70 @@
                                 in ac mauris ac vel, interdum sed malesuada curae sit amet non nec quis arcu massa. </p>                    
                         </div>
                         <div class="categories_product_inner categories_column7 owl-carousel">
-                            @foreach($categories as $category)
-                            @if($category->count()> 0)
-                            <div class="single_categories_product" aria-labelledby="{{ $category->slug }}">
+                            <div class="single_categories_product">
                                 <div class="categories_product_thumb">
-                                    <a href="{{ route('category.show', $category->slug) }}"><img src="{{asset('img/s-product/category1.jpg')}}" alt=""></a>
+                                    <a href="shop.html"><img src="assets/img/s-product/category1.jpg" alt=""></a>
                                 </div>
                                 <div class="categories_product_content">
-                                    <h4><a href="{{ route('category.show', $category->slug) }}"> {{ $category->name }}</a></h4>
+                                    <h4><a href="shop.html"> Body Parts</a></h4>
                                 </div>
                             </div>
-                            @endif
-                            @endforeach
+                            <div class="single_categories_product">
+                                <div class="categories_product_thumb">
+                                    <a href="shop.html"><img src="assets/img/s-product/category2.jpg" alt=""></a>
+                                </div>
+                                <div class="categories_product_content">
+                                    <h4><a href="shop.html"> Car engine</a></h4>
+                                </div>
+                            </div>
+                            <div class="single_categories_product">
+                                <div class="categories_product_thumb">
+                                    <a href="shop.html"><img src="assets/img/s-product/category3.jpg" alt=""></a>
+                                </div>
+                                <div class="categories_product_content">
+                                    <h4><a href="shop.html"> Interiors</a></h4>
+                                </div>
+                            </div>
+                            <div class="single_categories_product">
+                                <div class="categories_product_thumb">
+                                    <a href="shop.html"><img src="assets/img/s-product/category4.jpg" alt=""></a>
+                                </div>
+                                <div class="categories_product_content">
+                                    <h4><a href="shop.html"> Lighting & lamp</a></h4>
+                                </div>
+                            </div>
+                            <div class="single_categories_product">
+                                <div class="categories_product_thumb">
+                                    <a href="shop.html"><img src="assets/img/s-product/category5.jpg" alt=""></a>
+                                </div>
+                                <div class="categories_product_content">
+                                    <h4><a href="shop.html"> Repair Parts</a></h4>
+                                </div>
+                            </div>
+                            <div class="single_categories_product">
+                                <div class="categories_product_thumb">
+                                    <a href="shop.html"><img src="assets/img/s-product/category6.jpg" alt=""></a>
+                                </div>
+                                <div class="categories_product_content">
+                                    <h4><a href="shop.html"> Smart Devices</a></h4>
+                                </div>
+                            </div>
+                            <div class="single_categories_product">
+                                <div class="categories_product_thumb">
+                                    <a href="shop.html"><img src="assets/img/s-product/category7.jpg" alt=""></a>
+                                </div>
+                                <div class="categories_product_content">
+                                    <h4><a href="shop.html"> Wheels & Tires</a></h4>
+                                </div>
+                            </div>
+                            <div class="single_categories_product">
+                                <div class="categories_product_thumb">
+                                    <a href="shop.html"><img src="assets/img/s-product/category3.jpg" alt=""></a>
+                                </div>
+                                <div class="categories_product_content">
+                                    <h4><a href="shop.html"> Smart Devices</a></h4>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1512,7 +1564,7 @@
             </div>
         </div>
         <!--product area end-->
-    </div> --}}
+    </div>
     <!--home section bg area end-->
     
     <!--shipping area start-->
