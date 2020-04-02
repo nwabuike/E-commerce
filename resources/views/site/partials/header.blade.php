@@ -1,5 +1,4 @@
-<header>
-     <!--header area start-->
+ <!--header area start-->
     
     <!--offcanvas menu area start-->
     <div class="off_canvars_overlay">
@@ -17,12 +16,12 @@
                               <a href="javascript:void(0)"><i class="ion-android-close"></i></a>  
                         </div>
                         <div class="call_support">
-                            <p><i class="icon-phone-call" aria-hidden="true"></i> <span>Call us: <a href="tel:+(+234)8163778265">(+234) 8163 7782 65</a></span></p>
+                            <p><i class="icon-phone-call" aria-hidden="true"></i> <span>Call us: <a href="tel:+(+234)8163778265">(+234)8163 7782 65</a></span></p>
 
                         </div>
                         <div class="header_account">
                             <ul>
-                                <li class="language"><a href="#"><img src="assets/img/logo/language.png" alt=""> english <i class="ion-chevron-down"></i></a>
+                                <li class="language"><a href="#"><img src="{{asset('/frontend/images/logo/language.png')}}" alt=""> english <i class="ion-chevron-down"></i></a>
                                     <ul class="dropdown_language">
                                         <li><a href="#">English</a></li>
                                         <li><a href="#">Germany</a></li>
@@ -34,47 +33,44 @@
                                         <li><a href="#">EUR – Euro</a></li>
                                         <li><a href="#">GBP – British Pound</a></li>
                                         <li><a href="#">INR – USD</a></li>
-                                        <li><a href="#">INR – India Rupee</a></li>
+                                        <li><a href="#">Naira - $#8358;</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </div>
-                            <div class="header_top_links">
-                                <ul>
-                                    @guest
-                                    <li><a href="{{ route('register') }}">Register</a></li>
-                                    <li><a href="{{ route('login') }}">login</a></li>
-                                    <li><a href="{{ route('checkout.cart') }}">Checkout</a></li>
-                                    @else
-                                    <li class="currency"><a href="#">{{ Auth::user()->full_name }}<i class="ion-chevron-down"></i></a>
-                                        <ul class="dropdown_profile">
-                                            <li><a class="dropdown-item" href="{{ route('account.orders') }}">Orders</a><li>
-                                                <li><a class="dropdown-item" href="{{ route('logout') }}"
-                                                    onclick="event.preventDefault();
-                                                              document.getElementById('logout-form').submit();">
-                                                     {{ __('Logout') }}
-                                                 </a>
-                                                </li>
-                                                 <li>
-                                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                    @csrf
-                                                     </form>
-                                                </li>
-                                            </ul>
-                                            @endguest
-
-
-                                </ul>
-                               
-                            </div>   
+                        <div class="header_top_links">
+                            <ul>
+                                @guest
+                                <li><a href="{{ route('register') }}">Register</a></li>
+                                <li><a href="{{ route('login') }}">login</a></li>
+                                <li><a href="{{ route('checkout.cart') }}">Checkout</a></li>
+                                @else
+                                <li class="currency">
+                                    <a>
+                                        {{ Auth::user()->full_name }}
+                                    </a></li>
+                                     <li><a  href="{{ route('account.orders') }}">Orders</a></li>
+                                            <li><a href="{{ route('logout') }}"
+                                                onclick="event.preventDefault();
+                                                          document.getElementById('logout-form').submit();">
+                                                 {{ __('Logout') }}
+                                             </a></li>
+                                            <li><form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                            </form></li>
+                                    
+                                @endguest
+                            </ul>
                         </div> 
                         <div class="search_container">
                             <form action="#">
                                <div class="hover_category">
                                     <select class="select_option" name="select" id="categori1">
                                         <option selected value="1">All Categories</option>
-                                        <option value="2">Accessories</option>
-                                       
+                                        @foreach ($categories as $item)
+                                        <option value="2">{{$item->name}}</option>
+                                        @endforeach
+                                     
                                     </select>                        
                                </div>
                                 <div class="search_box">
@@ -86,21 +82,21 @@
                         <div class="header_configure_area">
                             <div class="header_wishlist">
                                 <a href="wishlist.html"><i class="icon-heart"></i>
-                                    <span class="wishlist_count">3</span>
+                                    <span class="wishlist_count">{{ $cartCount }}</span>
                                 </a>
                             </div>
                             <div class="mini_cart_wrapper">
                                 <a href="javascript:void(0)">
                                     <i class="icon-shopping-bag2"></i>
                                     <span class="cart_price">$152.00 <i class="ion-ios-arrow-down"></i></span>
-                                    <span class="cart_count">2</span>
+                                    <span class="cart_count">{{ $cartCount }}</span>
                                 </a>
                                 <!--mini cart-->
                                 <div class="mini_cart">
                                     <div class="mini_cart_inner">
                                         <div class="cart_item">
                                            <div class="cart_img">
-                                               <a href="#"><img src="assets/img/s-product/product.jpg" alt=""></a>
+                                               <a href="#"><img src="{{asset('frontend/images/s-product/product.jpg')}}" alt=""></a>
                                            </div>
                                             <div class="cart_info">
                                                 <a href="#">Fusce Aliquam</a>
@@ -112,7 +108,7 @@
                                         </div>
                                         <div class="cart_item">
                                            <div class="cart_img">
-                                               <a href="#"><img src="{{asset ('images') }}" alt=""></a>
+                                               <a href="#"><img src="{{asset ('frontend/images/s-product.jpg') }}" alt=""></a>
                                            </div>
                                             <div class="cart_info">
                                                 <a href="#">Ras Neque Metus</a>
@@ -127,7 +123,10 @@
                                                 <span>Sub total:</span>
                                                 <span class="price">$138.00</span>
                                             </div>
-                                            
+                                            <div class="cart_total mt-10">
+                                                <span>total:</span>
+                                                <span class="price">$138.00</span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="mini_cart_footer">
@@ -166,8 +165,6 @@
                             <ul>
                                 <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
                                 <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li class="pinterest"><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                                <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
                                 <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
                             </ul>
                         </div>
@@ -186,18 +183,18 @@
                         <div class="col-lg-4 col-md-5">
                             <div class="header_account">
                                 <ul>
-                                    <li class="language"><a href="#"><img src="assets/img/logo/language.png" alt=""> english <i class="ion-chevron-down"></i></a>
+                                    <li class="language"><a href="#"><img src="{{asset('frontend/images/logo/language.png')}}" alt=""> english <i class="ion-chevron-down"></i></a>
                                         <ul class="dropdown_language">
                                             <li><a href="#">English</a></li>
                                             <li><a href="#">Germany</a></li>
                                             <li><a href="#">Japanese</a></li>
                                         </ul>
                                     </li>
-                                    <li class="currency"><a href="#">&#8358;<i class="ion-chevron-down"></i></a>
+                                    <li class="currency"><a href="#">&#8358; <i class="ion-chevron-down"></i></a>
                                         <ul class="dropdown_currency">
                                             <li><a href="#">EUR – Euro</a></li>
                                             <li><a href="#">GBP – British Pound</a></li>
-                                            <li><a href="#">INR – India Rupee</a></li>
+                                            <li><a href="#">&#8358;  – Naira</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -211,25 +208,22 @@
                                     <li><a href="{{ route('login') }}">login</a></li>
                                     <li><a href="{{ route('checkout.cart') }}">Checkout</a></li>
                                     @else
-                                    <li class="currency"><a href="#">{{ Auth::user()->full_name }}<i class="ion-chevron-down"></i></a>
-                                        <ul class="dropdown_profile">
-                                            <li><a class="dropdown-item" href="{{ route('account.orders') }}">Orders</a><li>
-                                                <li><a class="dropdown-item" href="{{ route('logout') }}"
+                                    <li class="currency">
+                                        <a>
+                                            {{ Auth::user()->full_name }}
+                                        </a></li>
+                                         <li><a  href="{{ route('account.orders') }}">Orders</a></li>
+                                                <li><a href="{{ route('logout') }}"
                                                     onclick="event.preventDefault();
                                                               document.getElementById('logout-form').submit();">
                                                      {{ __('Logout') }}
-                                                 </a>
-                                                </li>
-                                                 <li>
-                                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                 </a></li>
+                                                <li><form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                                     @csrf
-                                                     </form>
-                                                </li>
-                                            </ul>
-
-
+                                                </form></li>
+                                        
+                                    @endguest
                                 </ul>
-                                @endguest
                             </div>   
                         </div>
                     </div>
@@ -243,7 +237,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-2">
                             <div class="logo">
-                                <a href="{{ url('/') }}"><img src="{{asset ('users/images/logo.png')}}" alt=""></a>
+                                <a href="{{ url('/') }}"><img src="{{asset ('frontend/images/logo/logo.png')}}" alt=""></a>
                             </div>
                         </div>
                         <div class="col-lg-10">
@@ -251,15 +245,12 @@
                                 <div class="search_container">
                                     <form action="#">
                                        <div class="hover_category">
-                                            {{-- <select class="select_option" name="select" id="categori2">
-                                                @foreach($categories as $cat)
-                                                @if($cat ->count()>0)
+                                            <select class="select_option" name="select" id="categori2">
                                                 <option selected value="1">All Categories</option>
-                                                <option selected value="1">{{$cat->name}}</option>
-                                                @endif
+                                                @foreach ($categories as $item)
+                                                <option value="2">{{$item->name}}</option>
                                                 @endforeach
-                                                
-                                            </select>                         --}}
+                                            </select>                        
                                        </div>
                                         <div class="search_box">
                                             <input placeholder="Search product..." type="text">
@@ -270,21 +261,21 @@
                                 <div class="header_configure_area">
                                     <div class="header_wishlist">
                                         <a href="wishlist.html"><i class="icon-heart"></i>
-                                            <span class="wishlist_count">3</span>
+                                            <span class="wishlist_count">{{ $cartCount }}</span>
                                         </a>
                                     </div>
                                     <div class="mini_cart_wrapper">
                                         <a href="javascript:void(0)">
                                             <i class="icon-shopping-bag2"></i>
                                             <span class="cart_price">$152.00 <i class="ion-ios-arrow-down"></i></span>
-                                            <span class="cart_count">2</span>
+                                            <span class="cart_count">{{ $cartCount }}</span>
                                         </a>
                                         <!--mini cart-->
                                         <div class="mini_cart">
                                             <div class="mini_cart_inner">
                                                 <div class="cart_item">
                                                    <div class="cart_img">
-                                                       <a href="#"><img src="assets/img/s-product/product.jpg" alt=""></a>
+                                                       <a href="#"><img src="{{asset('frontend/images/s-product/product.jpg')}}" alt=""></a>
                                                    </div>
                                                     <div class="cart_info">
                                                         <a href="#">Fusce Aliquam</a>
@@ -296,7 +287,7 @@
                                                 </div>
                                                 <div class="cart_item">
                                                    <div class="cart_img">
-                                                       <a href="#"><img src="assets/img/s-product/product2.jpg" alt=""></a>
+                                                       <a href="#"><img src="{{asset ('frontend/images/s-product/product2.jpg')}}" alt=""></a>
                                                    </div>
                                                     <div class="cart_info">
                                                         <a href="#">Ras Neque Metus</a>
@@ -346,6 +337,9 @@
                                 <nav>  
                                     <ul>
                                       
+                                        <li class="mega_items"><a href="shop.html">shop</i></a> 
+                                        
+                                        </li>
                                         <li><a href="about.html">About Us</a></li>
                                         <li><a href="contact.html"> Contact Us</a></li>
                                     </ul>  
@@ -359,4 +353,3 @@
         </div> 
     </header>
     <!--header area end-->
-

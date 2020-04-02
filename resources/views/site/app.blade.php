@@ -11,6 +11,7 @@
 @include('site.partials.header')
 @yield('content')
 @include('site.partials.footer')
+@include('site.partials.modalfoot')
 @include('site.partials.scripts')
 </body>
 </html>
