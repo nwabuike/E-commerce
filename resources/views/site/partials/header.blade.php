@@ -22,7 +22,7 @@
                         </div>
                         <div class="header_account">
                             <ul>
-                                <li class="language"><a href="#"><img src="assets/img/logo/language.png" alt=""> english <i class="ion-chevron-down"></i></a>
+                                <li class="language"><a href="#"><img src="/frontend/images/logo.png" alt=""> english <i class="ion-chevron-down"></i></a>
                                     <ul class="dropdown_language">
                                         <li><a href="#">English</a></li>
                                         <li><a href="#">Germany</a></li>
@@ -100,7 +100,7 @@
                                     <div class="mini_cart_inner">
                                         <div class="cart_item">
                                            <div class="cart_img">
-                                               <a href="#"><img src="assets/img/s-product/product.jpg" alt=""></a>
+                                               <a href="#"><img src="/frontend/images/s-product/product.jpg" alt=""></a>
                                            </div>
                                             <div class="cart_info">
                                                 <a href="#">Fusce Aliquam</a>
@@ -186,7 +186,7 @@
                         <div class="col-lg-4 col-md-5">
                             <div class="header_account">
                                 <ul>
-                                    <li class="language"><a href="#"><img src="assets/img/logo/language.png" alt=""> english <i class="ion-chevron-down"></i></a>
+                                    <li class="language"><a href="#"><img src="/frontend/images/logo/language.png" alt=""> english <i class="ion-chevron-down"></i></a>
                                         <ul class="dropdown_language">
                                             <li><a href="#">English</a></li>
                                             <li><a href="#">Germany</a></li>
@@ -284,7 +284,7 @@
                                             <div class="mini_cart_inner">
                                                 <div class="cart_item">
                                                    <div class="cart_img">
-                                                       <a href="#"><img src="assets/img/s-product/product.jpg" alt=""></a>
+                                                       <a href="#"><img src="/frontend/images/s-product/product.jpg" alt=""></a>
                                                    </div>
                                                     <div class="cart_info">
                                                         <a href="#">Fusce Aliquam</a>
@@ -296,7 +296,7 @@
                                                 </div>
                                                 <div class="cart_item">
                                                    <div class="cart_img">
-                                                       <a href="#"><img src="assets/img/s-product/product2.jpg" alt=""></a>
+                                                       <a href="#"><img src="/frontend/images/s-product/product2.jpg" alt=""></a>
                                                    </div>
                                                     <div class="cart_info">
                                                         <a href="#">Ras Neque Metus</a>
