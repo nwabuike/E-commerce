@@ -8,7 +8,7 @@
 </section>
 <section class="section-content bg padding-y">
     <div class="container">
-        <div id="code_prod_complex">
+        <div id="code_prod_complex"> 
             <div class="row">
                 @forelse($category->products as $product)
                     <div class="col-md-4">

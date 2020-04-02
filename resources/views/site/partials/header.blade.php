@@ -21,11 +21,7 @@
                         </div>
                         <div class="header_account">
                             <ul>
-<<<<<<< HEAD
-                                <li class="language"><a href="#"><img src="/frontend/images/logo.png" alt=""> english <i class="ion-chevron-down"></i></a>
-=======
                                 <li class="language"><a href="#"><img src="{{asset('/frontend/images/logo/language.png')}}" alt=""> english <i class="ion-chevron-down"></i></a>
->>>>>>> 364e5fd8d320ae97b1e80615208405ee92fa83c0
                                     <ul class="dropdown_language">
                                         <li><a href="#">English</a></li>
                                         <li><a href="#">Germany</a></li>
@@ -71,7 +67,7 @@
                                <div class="hover_category">
                                     <select class="select_option" name="select" id="categori1">
                                         <option selected value="1">All Categories</option>
-                                        @foreach ($categories as $item)
+                                        @foreach ($category as $item)
                                         <option value="2">{{$item->name}}</option>
                                         @endforeach
                                      
@@ -100,11 +96,7 @@
                                     <div class="mini_cart_inner">
                                         <div class="cart_item">
                                            <div class="cart_img">
-<<<<<<< HEAD
-                                               <a href="#"><img src="/frontend/images/s-product/product.jpg" alt=""></a>
-=======
                                                <a href="#"><img src="{{asset('frontend/images/s-product/product.jpg')}}" alt=""></a>
->>>>>>> 364e5fd8d320ae97b1e80615208405ee92fa83c0
                                            </div>
                                             <div class="cart_info">
                                                 <a href="#">Fusce Aliquam</a>
@@ -191,11 +183,7 @@
                         <div class="col-lg-4 col-md-5">
                             <div class="header_account">
                                 <ul>
-<<<<<<< HEAD
-                                    <li class="language"><a href="#"><img src="/frontend/images/logo/language.png" alt=""> english <i class="ion-chevron-down"></i></a>
-=======
                                     <li class="language"><a href="#"><img src="{{asset('frontend/images/logo/language.png')}}" alt=""> english <i class="ion-chevron-down"></i></a>
->>>>>>> 364e5fd8d320ae97b1e80615208405ee92fa83c0
                                         <ul class="dropdown_language">
                                             <li><a href="#">English</a></li>
                                             <li><a href="#">Germany</a></li>
@@ -259,7 +247,7 @@
                                        <div class="hover_category">
                                             <select class="select_option" name="select" id="categori2">
                                                 <option selected value="1">All Categories</option>
-                                                @foreach ($categories as $item)
+                                                @foreach ($category as $item)
                                                 <option value="2">{{$item->name}}</option>
                                                 @endforeach
                                             </select>                        
@@ -287,11 +275,7 @@
                                             <div class="mini_cart_inner">
                                                 <div class="cart_item">
                                                    <div class="cart_img">
-<<<<<<< HEAD
-                                                       <a href="#"><img src="/frontend/images/s-product/product.jpg" alt=""></a>
-=======
                                                        <a href="#"><img src="{{asset('frontend/images/s-product/product.jpg')}}" alt=""></a>
->>>>>>> 364e5fd8d320ae97b1e80615208405ee92fa83c0
                                                    </div>
                                                     <div class="cart_info">
                                                         <a href="#">Fusce Aliquam</a>
@@ -303,11 +287,7 @@
                                                 </div>
                                                 <div class="cart_item">
                                                    <div class="cart_img">
-<<<<<<< HEAD
-                                                       <a href="#"><img src="/frontend/images/s-product/product2.jpg" alt=""></a>
-=======
                                                        <a href="#"><img src="{{asset ('frontend/images/s-product/product2.jpg')}}" alt=""></a>
->>>>>>> 364e5fd8d320ae97b1e80615208405ee92fa83c0
                                                    </div>
                                                     <div class="cart_info">
                                                         <a href="#">Ras Neque Metus</a>

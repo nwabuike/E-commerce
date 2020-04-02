@@ -37,7 +37,7 @@
                </div>
            </div>
         </div>
-        <div class="single_slider d-flex align-items-center" data-bgimg="{{asset('frontend/images/slider/slider1.jpg')}}">
+        <div class="single_slider d-flex align-items-center" data-bgimg="{{asset('/frontend/images/slider/slider1.jpg')}}">
             <div class="container">
                <div class="row">
                    <div class="col-12">
@@ -73,7 +73,7 @@
                             in ac mauris ac vel, interdum sed malesuada curae sit amet non nec quis arcu massa. </p>                    
                     </div>
                     <div class="categories_product_inner categories_column7 owl-carousel">
-                        @foreach ($categories as $category)
+                        @foreach ($category as $category)
                          <div class="single_categories_product">
                             <div class="categories_product_thumb">
                                 <a href="{{ route('category.show', $category->slug) }}" id="{{ $category->slug }}"><img src="{{$category->image }}" alt=""></a>
